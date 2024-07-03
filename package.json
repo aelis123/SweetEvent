@@ -1,0 +1,14 @@
+{
+  "name": "sweet-event",
+  "version": "1.0.0",
+  "description": "Eine einfache Webanwendung für Sweet Event",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Nensen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
