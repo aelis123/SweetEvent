@@ -1,17 +1,21 @@
-const letters = "TSLAYEEVRN".split('');
+const letters = "EEHTIIRNUAMHCJ".split('');
 const positions = [
   
+
   { x: 800, y: 100 },
-  
   { x: 800, y: 900 },
   { x: 200, y: 900 },
   { x: 900, y: 500 },
   { x: 100, y: 500 },
   { x: 800, y: 100 },
+  { x: 200, y: 100 },
   { x: 900, y: 500 },
+  { x: 200, y: 900 },
   { x: 800, y: 900 },
   { x: 200, y: 100 },
+  { x: 800, y: 100 },
   { x: 200, y: 900 },
+  { x: 900, y: 500 },
 ];
 let currentLetterIndex = 0;
 
@@ -31,12 +35,12 @@ function showNextLetter() {
       document.getElementById('letter').style.display = 'none';
       currentLetterIndex++;
       if (currentLetterIndex < letters.length) {
-        setTimeout(showNextLetter, 26 * 60 * 1000); // 26 Minuten warten bis zum nächsten Buchstaben
+        setTimeout(showNextLetter, 21.43 * 60 * 1000); // 21,43 Minuten warten bis zum nächsten Buchstaben
     } else {
         // Zeige den Start-Button wieder an, wenn alle Buchstaben angezeigt wurden
         document.getElementById('startButton').style.display = 'block';
       }
-    }, 240000); // 1 Sekunde Buchstabe anzeigen
+    }, 240000); // 4 Minuten Buchstabe anzeigen
   }
 }
 

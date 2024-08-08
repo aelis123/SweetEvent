@@ -1,86 +1,106 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-   
-    background-color: rgb(0, 70, 12);
-    color: aliceblue;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: rgb(0, 70, 12);
+  color: aliceblue;
+  position: relative;
+}
+
+#letter {
+  font-size: 62px;
+  position: absolute;
+  display: none;
+  white-space: nowrap;
+  text-shadow: 2px 2px 4px rgba(2, 2, 2, 0.5); /* Textschatten für bessere Lesbarkeit */
+  font-family: 'Uncial Antiqua', cursive;
+  margin: auto;
+  padding: auto;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Glowing effect */
+@keyframes glow {
+  from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.24), 
+                   0 0 20px rgba(255, 255, 255, 0.24), 
+                   0 0 30px rgba(255, 255, 255, 0.24), 
+                   0 0 40px rgba(255, 255, 255, 0.24),  
+                   0 0 50px rgba(255, 255, 255, 0.24), 
+                   0 0 60px rgba(255, 255, 255, 0.24), 
+                   0 0 70px rgba(255, 255, 255, 0.24);
   }
-
-    #letter {
-        font-size: 56px;
-        position: absolute;
-        display: none;
-        white-space: nowrap;
-        text-shadow: 2px 2px 4px rgba(2, 2, 2, 0.5); /* Textschatten für bessere Lesbarkeit */
-        font-family: 'Uncial Antiqua', cursive;
-        margin: auto;
-        padding: auto;
-
-    }
-    
-
+  to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.459), 
+                   0 0 30px rgba(255, 255, 255, 0.459), 
+                   0 0 40px rgba(255, 255, 255, 0.459), 
+                   0 0 50px rgba(255, 255, 255, 0.459), 
+                   0 0 60px rgba(255, 255, 255, 0.459), 
+                   0 0 70px rgba(255, 255, 255, 0.459), 
+                   0 0 80px rgba(255, 255, 255, 0.459);
+  }
+}
 
 button {
-    font-family: 'Uncial Antiqua', cursive;
-    background-color: #5A3E36;
-    border: 2px solid #D4AF37;
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.4s, border-color 0.4s, box-shadow 0.4s;
-  }
+  font-family: 'Uncial Antiqua', cursive;
+  background-color: #5A3E36;
+  border: 2px solid #D4AF37;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
 
-  button:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.75) 0%, rgba(0, 0, 0, 0) 80%);
-    transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-  }
+button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.75) 0%, rgba(0, 0, 0, 0) 80%);
+  transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
 
-  button:hover:before {
-    width: 400%;
-    height: 400%;
-    top: 50%;
-    left: 50%;
-  }
+button:hover:before {
+  width: 400%;
+  height: 400%;
+  top: 50%;
+  left: 50%;
+}
 
- button:hover {
-    color: #5A3E36;
-    border-color: #5A3E36;
-    box-shadow: 0 0 20px rgba(202, 219, 255, 0.75);
-  }
+button:hover {
+  color: #5A3E36;
+  border-color: #5A3E36;
+  box-shadow: 0 0 20px rgba(202, 219, 255, 0.75);
+}
 
-  button span {
-    position: relative;
-    z-index: 1;
-  }
-  #container {
-    width: 1000px;
-    height: 1000px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0);
-    box-sizing: border-box;
-  }
+button span {
+  position: relative;
+  z-index: 1;
+}
+
+#container {
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0);
+  box-sizing: border-box;
+}
