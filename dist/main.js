@@ -1,4 +1,4 @@
-const letters = "EEHTIIRNUAMHCJ".split('');
+const letters = "RLIDKRUYFELENR".split('');
 const positions = [
   
 
@@ -26,6 +26,15 @@ function moveLetterToPosition(index) {
   letterElement.style.left = `${position.x}px`;
   letterElement.style.top = `${position.y}px`;
   letterElement.style.display = 'block';
+
+  // ✨ Sound abspielen
+  const popSound = document.getElementById('popSound');
+  popSound.volume = 1.0; // Maximal (Standardwert)
+
+  popSound.currentTime = 0; // Zurück an den Anfang
+  popSound.play().catch(e => {
+    console.warn('Sound konnte nicht abgespielt werden:', e);
+  });
 }
 
 function showNextLetter() {
